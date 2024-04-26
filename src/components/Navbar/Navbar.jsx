@@ -8,8 +8,7 @@ const Navbar = () => {
     const { user, createLogOut } = useContext(authContext);
     const handleLogOut = () => {
         createLogOut()
-            .then(result => {
-                console.log(result);
+            .then(() => {
                 Swal.fire({
                     title: 'Success!',
                     text: 'LogOut successfully',
@@ -51,7 +50,7 @@ const Navbar = () => {
                     {
                         user ?
                             <>
-                                <button onClick={handleLogOut} className="btn bg-orange-500 text-white hover:text-black w-16 p-0">Log out</button>
+                                <button onClick={handleLogOut} className="btn bg-[#D2B48C] text-white hover:text-black w-16 p-0">Log out</button>
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
                                         <img alt="user photo" src={user.photoURL} title={user.displayName} />
@@ -59,7 +58,7 @@ const Navbar = () => {
                                 </div>
                             </>
                             :
-                            <Link to="/login" className="btn bg-orange-500 text-white hover:text-black">Login</Link>
+                            <Link to="/login" className="btn bg-[#D2B48C] text-white hover:text-black">Login</Link>
                     }
                 </div>
             </div>

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 
 const Register = () => {
-    const { error, setError,setUser,createUser,} = useContext(authContext);
+    const { createUser,error, setError,setUser } = useContext(authContext);
     const [showPassword, setShowPassword] = useState(false);
     const handleRegister = (e) => {
         e.preventDefault();
@@ -101,7 +101,7 @@ const Register = () => {
                             error && <small className="text-red-700">{error}</small>
                         }
                         <div className="form-control mt-6">
-                            <button className="btn bg-orange-500 text-white hover:text-black">Register</button>
+                            <button className="btn bg-[#D2B48C] text-white hover:text-black">Register</button>
                         </div>
                         <p>Already have an account? Please <Link to="/login" className="text-blue-700 font-semibold">Login</Link></p>
                     </form>
