@@ -1,13 +1,13 @@
-import { createUserWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
-import { createContext, useState } from "react";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
 import { auth } from "../../Firebase/Firebase.config";
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
 
 export const authContext = createContext(null);
-const AuthProvider = ({children}) => {
-    const [user, setUser]=useState(null);
-    const [error, setError]= useState('');
-    const [loading, setLoading]=useState(true);
+const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null);
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(true);
 
 
     // create user
@@ -15,11 +15,18 @@ const AuthProvider = ({children}) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
-     
 
-    const createLogOut=()=>{
+    // create login
+    const createLogin = (email, password) => {
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password);
+
+    }
+    //Log out
+    const createLogOut = () => {
         return signOut(auth);
     }
+
     // update profile 
     const createUpdate = (userName, photo) => {
         return updateProfile(auth.currentUser, {
@@ -27,14 +34,24 @@ const AuthProvider = ({children}) => {
             photoURL: photo,
         })
     }
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+            setLoading(false);
+        });
+        return () => {
+            unSubscribe();
+        }
+    }, []);
 
-    const info={
+    const info = {
         user,
         setUser,
         error,
         setError,
         loading,
         createUser,
+        createLogin,
         createUpdate,
         createLogOut,
 
@@ -45,7 +62,7 @@ const AuthProvider = ({children}) => {
         </authContext.Provider>
     );
 };
-AuthProvider.propTypes ={
+AuthProvider.propTypes = {
     children: PropTypes.node
 }
 export default AuthProvider;
