@@ -21,10 +21,10 @@ const Navbar = () => {
             })
     }
     const navLinks = <>
-        <NavLink className="btn" to="/">Home</NavLink>
-        <NavLink className="btn" to="/addSpot">Add Tourists Spot</NavLink>
-        <NavLink className="btn" to="/allSpot">All Tourists Spot</NavLink>
-        <NavLink className="btn" to="/myList">My Lists</NavLink>
+        <NavLink className="btn bg-[#D2B48C] text-white hover:text-black" to="/">Home</NavLink>
+        <NavLink className="btn bg-[#D2B48C] text-white hover:text-black" to="/addSpot">Add Tourists Spot</NavLink>
+        <NavLink className="btn bg-[#D2B48C] text-white hover:text-black" to="/allSpot">All Tourists Spot</NavLink>
+        <NavLink className="btn bg-[#D2B48C] text-white hover:text-black" to="/myList">My Lists</NavLink>
     </>
     return (
         <div>

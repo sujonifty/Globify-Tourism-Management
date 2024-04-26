@@ -12,6 +12,7 @@ import TouristSpot from './Pages/TouristSpot/TouristSpot';
 import AddTouristSpot from './Pages/AddTouristSpot/AddTouristSpot';
 import CardDetails from './components/CardDetails/CardDetails';
 import AuthProvider from './components/Providers/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -34,7 +35,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/addSpot",
-        element: <AddTouristSpot></AddTouristSpot>,
+        element: <PrivateRoute>
+          <AddTouristSpot></AddTouristSpot>,
+        </PrivateRoute>,
       },
       {
         path: "/allSpot",
