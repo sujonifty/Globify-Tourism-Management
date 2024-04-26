@@ -15,6 +15,8 @@ const AddTouristSpot = () => {
         const touristInfo ={name, country, location,photo,cost, season,travelTime,totalVisitors, description}
         // console.log(name, country, location,photo,cost, season,totalVisitors,travelTime,description)
         console.log(touristInfo);
+
+        //sent data to the server site
         fetch('http://localhost:5000/touristSpot',{
             method:'POST',
             headers:{
@@ -99,7 +101,7 @@ const AddTouristSpot = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Total Visitors</span>
+                                <span className="label-text">Total Visitors per year</span>
                             </label>
                             <input type="text" name="totalVisitors" placeholder="Enter visitors number" className="input input-bordered" required />
                         </div>
