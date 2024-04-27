@@ -90,11 +90,14 @@ const Login = () => {
                             </label>
                             <input name="email" type="email" placeholder="email" className="input input-bordered" required />
                         </div>
+                        <label className="label">
+                            <span className="label-text">Password</span>
+                        </label>
                         <label className="input input-bordered flex items-center gap-2">
                             <input
                                 type={showPassword ? "text" : "password"}
                                 name="password"
-                                className="grow"
+                                className="grow p-2 rounded-lg"
                                 placeholder="password" />
 
                             <span onClick={() => { setShowPassword(!showPassword) }}>

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 
 const Register = () => {
-    const { createUser,error, setError,setUser } = useContext(authContext);
+    const { createUser, error, setError, setUser } = useContext(authContext);
     const [showPassword, setShowPassword] = useState(false);
     const handleRegister = (e) => {
         e.preventDefault();
@@ -47,12 +47,12 @@ const Register = () => {
                     .catch(error => {
                         setError(error.message);
                     })
-                    Swal.fire({
-                        title: 'Success!',
-                        text: 'Registration successfully',
-                        icon: 'success',
-                        confirmButtonText: 'Cool'
-                      })
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Registration successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
             })
             .catch(error => {
                 setError(error.message);
@@ -82,11 +82,14 @@ const Register = () => {
                             </label>
                             <input name="email" type="email" placeholder="email" className="input input-bordered" required />
                         </div>
+                        <label className="label">
+                            <span className="label-text">Password</span>
+                        </label>
                         <label className="input input-bordered flex items-center gap-2">
                             <input
                                 type={showPassword ? "text" : "password"}
                                 name="password"
-                                className="grow"
+                                className="grow p-2 rounded-lg"
                                 placeholder="password" />
 
                             <span onClick={() => { setShowPassword(!showPassword) }}>

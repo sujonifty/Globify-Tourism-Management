@@ -1,10 +1,13 @@
-import { useContext } from "react";
-import Swal from "sweetalert2";
-import { authContext } from "../../components/Providers/AuthProvider";
 
-const AddTouristSpot = () => {
-    const {user,}=useContext(authContext);
-    const handleAddSpot = (e) => {
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+
+
+const Updated = () => {
+    const loadedSpot =useLoaderData();
+    const {_id, name, country, location,photo,cost, season,travelTime,totalVisitors, description} = loadedSpot;
+
+    const handleUpdate = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const country = e.target.country.value;
@@ -15,32 +18,29 @@ const AddTouristSpot = () => {
         const travelTime = e.target.travelTime.value;
         const totalVisitors = e.target.totalVisitors.value;
         const description = e.target.description.value;
-        const userName = user?.displayName
-        const userEmail = user?.email
-        console.log(country)
-        // console.log(touristInfo);
-        const touristInfo = { name, userName,userEmail, country, location, photo, cost, season, travelTime, totalVisitors, description }
+        const touristInfo ={name, country, location,photo,cost, season,travelTime,totalVisitors, description}
+        console.log(touristInfo);
 
         //sent data to the server site
-        fetch('http://localhost:5000/touristSpot', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
+        fetch(`http://localhost:5000/touristSpot/${_id}`,{
+            method:'PUT',
+            headers:{
+                'content-type':'application/json'
             },
-            body: JSON.stringify(touristInfo)
+            body:JSON.stringify(touristInfo)
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.insertedId) {
-                    Swal.fire({
-                        title: 'Success!',
-                        text: 'Tourist spot added successfully',
-                        icon: 'success',
-                        confirmButtonText: 'Cool'
-                    })
-                }
-            })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.modifiedCount>0){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Tourist spot updated successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
     }
     return (
         <div>
@@ -51,29 +51,20 @@ const AddTouristSpot = () => {
             </div>
             <div className="hero card shadow-xl min-h-screen bg-[#F4F3F0]">
 
-                <form onSubmit={handleAddSpot} className="card-body">
+                <form onSubmit={handleUpdate} className="card-body">
                     <div className="flex flex-col md:flex-row gap-5">
 
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Tourists Spot Name</span>
                             </label>
-                            <input type="text" name="name" placeholder="Enter Tourists Spot Name" className="input input-bordered" required />
+                            <input type="text" name="name" defaultValue={name} className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Country Name</span>
                             </label>
-                            <select name="country" className="select select-bordered md:w-52">
-                                <option disabled selected>Select Country</option>
-                                <option>Bangladesh</option>
-                                <option>Thailand</option>
-                                <option>Indonesia</option>
-                                <option>Malaysia</option>
-                                <option>Vietnam</option>
-                                <option>Cambodia</option>
-                            </select>
-                            {/* <input type="text" name="country" placeholder="Enter Country Name" className="input input-bordered" required /> */}
+                            <input type="text" name="country" defaultValue={country} className="input input-bordered" required />
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row gap-5">
@@ -81,13 +72,13 @@ const AddTouristSpot = () => {
                             <label className="label">
                                 <span className="label-text">Location</span>
                             </label>
-                            <input type="text" name="location" placeholder="Enter Location" className="input input-bordered" required />
+                            <input type="text" name="location" defaultValue={location} className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">PhotoURL</span>
                             </label>
-                            <input type="text" name="photo" placeholder="Enter PhotoURL" className="input input-bordered" required />
+                            <input type="text" name="photo" defaultValue={photo} className="input input-bordered" required />
                         </div>
 
                     </div>
@@ -96,13 +87,13 @@ const AddTouristSpot = () => {
                             <label className="label">
                                 <span className="label-text">Average Cost</span>
                             </label>
-                            <input type="text" name="cost" placeholder="Enter Average Cost" className="input input-bordered" required />
+                            <input type="text" name="cost" defaultValue={cost} className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Seasonality</span>
                             </label>
-                            <input type="text" name="season" placeholder="Like summer, winter" className="input input-bordered" required />
+                            <input type="text" name="season" defaultValue={season} className="input input-bordered" required />
                         </div>
 
                     </div>
@@ -111,26 +102,26 @@ const AddTouristSpot = () => {
                             <label className="label">
                                 <span className="label-text">Travel Time</span>
                             </label>
-                            <input type="text" name="travelTime" placeholder="Like 5 days" className="input input-bordered" required />
+                            <input type="text" name="travelTime" defaultValue={travelTime} className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Total Visitors per year</span>
                             </label>
-                            <input type="text" name="totalVisitors" placeholder="Enter visitors number" className="input input-bordered" required />
+                            <input type="text" name="totalVisitors" defaultValue={totalVisitors} className="input input-bordered" required />
                         </div>
 
                     </div>
-
+                    
                     <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Short Description</span>
-                        </label>
-                        <input type="text" name="description" placeholder="write description" className="input input-bordered" required />
-                    </div>
+                            <label className="label">
+                                <span className="label-text">Short Description</span>
+                            </label>
+                            <input type="text" name="description" defaultValue={description}  className="input input-bordered" required />
+                        </div>
 
                     <div className="form-control mt-6">
-                        <input type="submit" className="btn bg-[#D2B48C]" value="Add Tourist Spot" />
+                        <input type="submit" className="btn bg-[#D2B48C]" value="Update Now" />
                     </div>
                 </form>
             </div>
@@ -138,4 +129,4 @@ const AddTouristSpot = () => {
     );
 };
 
-export default AddTouristSpot;
+export default Updated;

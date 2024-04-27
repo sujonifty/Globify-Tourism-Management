@@ -13,6 +13,8 @@ import AddTouristSpot from './Pages/AddTouristSpot/AddTouristSpot';
 import CardDetails from './components/CardDetails/CardDetails';
 import AuthProvider from './components/Providers/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Updated from './components/Updated/Updated';
+;
 
 
 const router = createBrowserRouter([
@@ -35,9 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addSpot",
-        element: <PrivateRoute>
-          <AddTouristSpot></AddTouristSpot>,
-        </PrivateRoute>,
+        element: <PrivateRoute><AddTouristSpot></AddTouristSpot></PrivateRoute>,
       },
       {
         path: "/allSpot",
@@ -50,8 +50,13 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
       },
       {
+        path: "/update/:id",
+        element:<PrivateRoute><Updated></Updated></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
+      },
+      {
         path: "/myList",
-        element: <MyList></MyList>,
+        element: <PrivateRoute><MyList></MyList></PrivateRoute>,
       },
     ]
   },
