@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import { authContext } from "../../components/Providers/AuthProvider";
 
 const AddTouristSpot = () => {
-    const {user,}=useContext(authContext);
+    const { user, } = useContext(authContext);
     const handleAddSpot = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -17,9 +17,9 @@ const AddTouristSpot = () => {
         const description = e.target.description.value;
         const userName = user?.displayName
         const userEmail = user?.email
-        console.log(country)
+        // console.log(country)
         // console.log(touristInfo);
-        const touristInfo = { name, userName,userEmail, country, location, photo, cost, season, travelTime, totalVisitors, description }
+        const touristInfo = { name, userName, userEmail, country, location, photo, cost, season, travelTime, totalVisitors, description }
 
         //sent data to the server site
         fetch('http://localhost:5000/touristSpot', {
@@ -121,13 +121,28 @@ const AddTouristSpot = () => {
                         </div>
 
                     </div>
+                    <div className="flex flex-col md:flex-row gap-5">
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">User Name</span>
+                            </label>
+                            <input type="text" name="UserName" value={user.displayName} className="input input-bordered" readOnly />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">User Email</span>
+                            </label>
+                            <input type="text" name="UserEmail" value={user.email} className="input input-bordered" readOnly />
+                        </div>
+
+                    </div>
 
                     <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Short Description</span>
-                        </label>
-                        <input type="text" name="description" placeholder="write description" className="input input-bordered" required />
-                    </div>
+                            <label className="label">
+                                <span className="label-text">Short Description</span>
+                            </label>
+                            <input type="text" name="description" placeholder="write description" className="input input-bordered" required />
+                        </div>
 
                     <div className="form-control mt-6">
                         <input type="submit" className="btn bg-[#D2B48C]" value="Add Tourist Spot" />

@@ -11,8 +11,8 @@ import 'swiper/css/pagination';
 
 
 // import required modules
-import { EffectFade, Navigation, Pagination } from 'swiper/modules';
-import Card from '../Card/Card';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
+
 
 const Slider = () => {
     return (
@@ -25,7 +25,11 @@ const Slider = () => {
                     pagination={{
                         clickable: true,
                     }}
-                    modules={[EffectFade, Navigation, Pagination]}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                      }}
+                    modules={[EffectFade, Navigation, Pagination,Autoplay]}
                     className="mySwiper h-[10rem] md:h-[15rem] lg:h-[30rem] card shadow-xl"
                 >
 

@@ -1,12 +1,15 @@
 
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { authContext } from "../Providers/AuthProvider";
 
 
 const Updated = () => {
+    const {user} =useContext(authContext) || {};
     const loadedSpot =useLoaderData();
     const {_id, name, country, location,photo,cost, season,travelTime,totalVisitors, description} = loadedSpot;
-
+    console.log(loadedSpot)
     const handleUpdate = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -18,8 +21,12 @@ const Updated = () => {
         const travelTime = e.target.travelTime.value;
         const totalVisitors = e.target.totalVisitors.value;
         const description = e.target.description.value;
-        const touristInfo ={name, country, location,photo,cost, season,travelTime,totalVisitors, description}
-        console.log(touristInfo);
+        const userName = user?.displayName
+        const userEmail = user?.email
+        // console.log(country)
+        // console.log(touristInfo);
+        const touristInfo = { name, userName,userEmail, country, location, photo, cost, season, travelTime, totalVisitors, description }
+
 
         //sent data to the server site
         fetch(`http://localhost:5000/touristSpot/${_id}`,{
@@ -51,7 +58,7 @@ const Updated = () => {
             </div>
             <div className="hero card shadow-xl min-h-screen bg-[#F4F3F0]">
 
-                <form onSubmit={handleUpdate} className="card-body">
+            <form onSubmit={handleUpdate} className="card-body">
                     <div className="flex flex-col md:flex-row gap-5">
 
                         <div className="form-control">
@@ -64,7 +71,16 @@ const Updated = () => {
                             <label className="label">
                                 <span className="label-text">Country Name</span>
                             </label>
-                            <input type="text" name="country" defaultValue={country} className="input input-bordered" required />
+                            <select name="country" className="select select-bordered md:w-52">
+                                <option disabled selected>{country}</option>
+                                <option>Bangladesh</option>
+                                <option>Thailand</option>
+                                <option>Indonesia</option>
+                                <option>Malaysia</option>
+                                <option>Vietnam</option>
+                                <option>Cambodia</option>
+                            </select>
+                           
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row gap-5">
@@ -112,13 +128,13 @@ const Updated = () => {
                         </div>
 
                     </div>
-                    
+
                     <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Short Description</span>
-                            </label>
-                            <input type="text" name="description" defaultValue={description}  className="input input-bordered" required />
-                        </div>
+                        <label className="label">
+                            <span className="label-text">Short Description</span>
+                        </label>
+                        <input type="text" name="description" defaultValue={description} className="input input-bordered" required />
+                    </div>
 
                     <div className="form-control mt-6">
                         <input type="submit" className="btn bg-[#D2B48C]" value="Update Now" />

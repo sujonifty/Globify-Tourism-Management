@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
 
-const Card = ({ spot }) => {
-    const {_id, name, country, location,photo,cost, season,travelTime,totalVisitors, description} = spot;
+
+const HomeCard = ({selectedSpot}) => {
+    const {_id, name, country, location,photo,cost, season,travelTime,totalVisitors, description} = selectedSpot;
+
     return (
         <div>
             <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
@@ -18,4 +20,4 @@ const Card = ({ spot }) => {
     );
 };
 
-export default Card;
+export default HomeCard;
