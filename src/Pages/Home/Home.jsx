@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import Slider from "../../components/Slider/Slider";
 import HomeCard from "../../components/HomeCard/HomeCard";
+import Promotion from "../../components/Promotion/Promotion";
+import OurPartner from "../../components/OurPartner/OurPartner";
 
 
 const Home = () => {
@@ -21,6 +23,9 @@ const Home = () => {
                 </div>
                 
             </section>
+
+            <Promotion></Promotion>
+            <OurPartner></OurPartner>
         </div>
     );
 };

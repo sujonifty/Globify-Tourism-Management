@@ -14,7 +14,7 @@ import CardDetails from './components/CardDetails/CardDetails';
 import AuthProvider from './components/Providers/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Updated from './components/Updated/Updated';
-;
+
 
 
 const router = createBrowserRouter([
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/touristSpot'),
+        loader: () => fetch('https://globify-tourism-server.vercel.app/touristSpot'),
       },
       {
         path: "/register",
@@ -43,17 +43,17 @@ const router = createBrowserRouter([
       {
         path: "/allSpot",
         element: <TouristSpot></TouristSpot>,
-        loader: () => fetch('http://localhost:5000/touristSpot'),
+        loader: () => fetch('https://globify-tourism-server.vercel.app/touristSpot'),
       },
       {
         path: "/cardDetails/:id",
         element: <CardDetails></CardDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
+        loader: ({ params }) => fetch(`https://globify-tourism-server.vercel.app/touristSpot/${params.id}`)
       },
       {
         path: "/update/:id",
         element:<PrivateRoute><Updated></Updated></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
+        loader: ({ params }) => fetch(`https://globify-tourism-server.vercel.app/touristSpot/${params.id}`)
       },
       {
         path: "/myList",

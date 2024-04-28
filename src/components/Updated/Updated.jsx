@@ -29,7 +29,7 @@ const Updated = () => {
 
 
         //sent data to the server site
-        fetch(`http://localhost:5000/touristSpot/${_id}`,{
+        fetch(`https://globify-tourism-server.vercel.app/touristSpot/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

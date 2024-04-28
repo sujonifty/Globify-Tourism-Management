@@ -22,7 +22,7 @@ const AddTouristSpot = () => {
         const touristInfo = { name, userName, userEmail, country, location, photo, cost, season, travelTime, totalVisitors, description }
 
         //sent data to the server site
-        fetch('http://localhost:5000/touristSpot', {
+        fetch('https://globify-tourism-server.vercel.app/touristSpot', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
