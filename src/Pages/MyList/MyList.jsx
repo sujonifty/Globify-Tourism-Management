@@ -3,6 +3,7 @@ import { authContext } from "../../components/Providers/AuthProvider";
 // import MyCard from "../../components/MyCard/MyCard";
 import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
+import TypeWriting from "../../components/HomeCard/TypeWrite/TypeWriting";
 
 
 const MyList = () => {
@@ -53,8 +54,10 @@ const MyList = () => {
     // console.log(items)
     return (
         <div>
-            <h1>My Tourist spots:{items.length} </h1>
-            <div className="overflow-x-auto">
+            <div className="min-h-10 my-10">
+                    <TypeWriting></TypeWriting>
+                </div>
+            <div className="overflow-x-auto my-10">
                 <table className="table">
                     {/* head */}
                     <thead>

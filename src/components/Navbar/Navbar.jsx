@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { authContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import DarkMode from "../DarkMode/DarkMode";
 
 
 const Navbar = () => {
@@ -20,14 +21,14 @@ const Navbar = () => {
                 console.log(error);
             })
     }
-    
+
     const navLinks = <>
         <NavLink className="btn bg-[#D2B48C] text-white hover:text-black" to="/">Home</NavLink>
         <NavLink className="btn bg-[#D2B48C] text-white hover:text-black" to="/addSpot">Add Tourists Spot</NavLink>
         <NavLink className="btn bg-[#D2B48C] text-white hover:text-black" to="/allSpot">All Tourists Spot</NavLink>
         <NavLink className="btn bg-[#D2B48C] text-white hover:text-black" to="/myList">My Lists</NavLink>
         <NavLink className="" >
-        <input type="checkbox" className="toggle" checked />
+            <DarkMode></DarkMode>
         </NavLink>
     </>
     return (
