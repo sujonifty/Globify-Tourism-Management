@@ -92,11 +92,7 @@ const MyList = () => {
                     </tbody>
                 </table>
             </div>
-            {/* <div className="grid grid-cols-1  gap-5 mx-auto">
-                {
-                    items.map(item=><MyCard items={items} setItems={setItems} key={item._id} item={item}></MyCard>)
-                }
-            </div> */}
+            
 
         </div>
     );

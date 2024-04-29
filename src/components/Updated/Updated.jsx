@@ -6,9 +6,9 @@ import { authContext } from "../Providers/AuthProvider";
 
 
 const Updated = () => {
-    const {user} =useContext(authContext) || {};
-    const loadedSpot =useLoaderData();
-    const {_id, name, country, location,photo,cost, season,travelTime,totalVisitors, description} = loadedSpot;
+    const { user } = useContext(authContext) || {};
+    const loadedSpot = useLoaderData();
+    const { _id, name, country, location, photo, cost, season, travelTime, totalVisitors, description } = loadedSpot;
     console.log(loadedSpot)
     const handleUpdate = (e) => {
         e.preventDefault();
@@ -23,31 +23,31 @@ const Updated = () => {
         const description = e.target.description.value;
         const userName = user?.displayName
         const userEmail = user?.email
-        // console.log(country)
+        console.log(userEmail)
         // console.log(touristInfo);
-        const touristInfo = { name, userName,userEmail, country, location, photo, cost, season, travelTime, totalVisitors, description }
+        const touristInfo = { name, userName, userEmail, country, location, photo, cost, season, travelTime, totalVisitors, description }
 
 
         //sent data to the server site
-        fetch(`https://globify-tourism-server.vercel.app/touristSpot/${_id}`,{
-            method:'PUT',
-            headers:{
-                'content-type':'application/json'
+        fetch(`https://globify-tourism-server.vercel.app/touristSpot/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(touristInfo)
+            body: JSON.stringify(touristInfo)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            if(data.modifiedCount>0){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Tourist spot updated successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Tourist spot updated successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
     }
     return (
         <div>
@@ -58,7 +58,7 @@ const Updated = () => {
             </div>
             <div className="hero card shadow-xl min-h-screen bg-[#F4F3F0]">
 
-            <form onSubmit={handleUpdate} className="card-body">
+                <form onSubmit={handleUpdate} className="card-body">
                     <div className="flex flex-col md:flex-row gap-5">
 
                         <div className="form-control">
@@ -80,7 +80,7 @@ const Updated = () => {
                                 <option>Vietnam</option>
                                 <option>Cambodia</option>
                             </select>
-                           
+
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row gap-5">

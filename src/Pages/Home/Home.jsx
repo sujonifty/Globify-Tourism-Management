@@ -3,6 +3,7 @@ import Slider from "../../components/Slider/Slider";
 import HomeCard from "../../components/HomeCard/HomeCard";
 import Promotion from "../../components/Promotion/Promotion";
 import OurPartner from "../../components/OurPartner/OurPartner";
+import CountryBody from "../../components/CountryBody/CountryBody";
 // import LottieAnimation from "../../components/LottieAnimation/LottieAnimation";
 
 
@@ -18,7 +19,7 @@ const Home = () => {
             <div>
                 {/* <LottieAnimation></LottieAnimation> */}
             </div>
-
+            <CountryBody></CountryBody>
             <section>
                 
                 <div className=" grid grid-cols-1 md:grid-cols-3  gap-5 mx-auto">
