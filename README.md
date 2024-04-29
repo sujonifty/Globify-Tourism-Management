@@ -2,8 +2,9 @@
 # Website Themes: (Tourism Management website)
 
 
-# Website Link:
-* Click here to see the website:[https://globify-tourism-management.web.app/]
+# Website Link: 
+Click here to see the website:[https://globify-tourism-management.web.app/]
+# Feature
 * Home: The home page have these sections - Navbar, SwiperSlider, Card Section, 2 extra section(promotion & partners) and  Footer.
 * Add tourist spot: It's a private route. Only users can add tourist spot, otherwise users can not add tourist spot.
 * All tourist Spot: People can see this section without login.But users can not see view details without logged in.
