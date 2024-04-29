@@ -5,7 +5,7 @@ import CountryCard from "./CountryCard";
 const CountryBody = () => {
     const [countryData, setCountryData]=useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/asia')
+        fetch('https://globify-tourism-server.vercel.app/asia')
             .then(res => res.json())
             .then(data => {
                 setCountryData(data)

@@ -59,7 +59,7 @@ const router = createBrowserRouter([
       {
         path: "/asia/:country",
         element:<PrivateRoute><SelectedCountry></SelectedCountry></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/asia/${params.country}`)
+        loader: ({ params }) => fetch(`https://globify-tourism-server.vercel.app/asia/${params.country}`)
       },
       {
         path: "/myList",
