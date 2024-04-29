@@ -1,24 +1,24 @@
+import { Fade } from "react-awesome-reveal";
 import { NavLink } from "react-router-dom";
 
 
 const CountryCard = ({ item }) => {
     const { image, country_name, description } = item;
     return (
-        <div>s
+        <div>
             {/* {`bg-[url(${image})] bg-cover object-cover`} */}
-            <NavLink  to={`/asia/${country_name}`} style={{ backgroundImage: `url(${image})` }} >
+            <NavLink to={`/asia/${country_name}`} style={{ backgroundImage: `url(${image})` }} >
 
-                <div className='space-y-3 py-5 bg-black text-white opacity-60  shadow-2xl lg:py-20 lg:m-20 card '>
-                    <div className="title font-bold text-2xl lg:text-3xl" data-swiper-parallax="-300">
-                       {country_name}
-                    </div>
-                    <div className="pb-2 hidden md:flex text-center font-semibold text-xl  justify-center">
-                        <p>A Serene Escape Amidst Limestone Wonders</p>
-                    </div>
-                    <div className=" w-2/3 mx-auto hidden md:flex" data-swiper-parallax="-100">
-                        <p>
-                            {description}
-                        </p>
+                
+                <div className="card shadow-2xl">
+                    <div className="relative">
+                        <img className="w-full bg-cover object-cover md:h-56  rounded-xl " src={image} alt={country_name} />
+                        <div className="absolute h-full w-full top-0 bottom-0 rounded-xl bg-black opacity-70">
+                            <Fade cascade className="flex flex-col justify-center space-y-3 pt-6 items-center text-white font-semibold">
+                                <h2 className=" text-2xl md:text-5xl font-semibold leading-tight tracking-wide">{country_name}</h2>
+                                <p className=" w-11/12 flex-1 text-center dark:text-gray-600">{description}</p>
+                            </Fade>
+                        </div>
                     </div>
                 </div>
 
