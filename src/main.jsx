@@ -14,6 +14,7 @@ import CardDetails from './components/CardDetails/CardDetails';
 import AuthProvider from './components/Providers/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Updated from './components/Updated/Updated';
+import SelectedCountry from './components/SelectedCountry/SelectedCountry';
 
 
 
@@ -54,6 +55,11 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element:<PrivateRoute><Updated></Updated></PrivateRoute>,
         loader: ({ params }) => fetch(`https://globify-tourism-server.vercel.app/touristSpot/${params.id}`)
+      },
+      {
+        path: "/asia/:country",
+        element:<PrivateRoute><SelectedCountry></SelectedCountry></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/asia/${params.country}`)
       },
       {
         path: "/myList",

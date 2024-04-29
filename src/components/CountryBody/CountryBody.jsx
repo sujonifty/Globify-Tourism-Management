@@ -5,14 +5,13 @@ import CountryCard from "./CountryCard";
 const CountryBody = () => {
     const [countryData, setCountryData]=useState([]);
     useEffect(() => {
-        fetch('https://globify-tourism-server.vercel.app/asia')
+        fetch('http://localhost:5000/asia')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setCountryData(data)
             })
     }, [])
-    console.log(countryData)
+    // console.log(countryData)
     return (
         <div>
             <div className="grid grid-cols-1  gap-5 mx-auto">

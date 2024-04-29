@@ -6,7 +6,7 @@ const CountryCard = ({ item }) => {
     return (
         <div>s
             {/* {`bg-[url(${image})] bg-cover object-cover`} */}
-            <NavLink style={{ backgroundImage: `url(${image})` }} >
+            <NavLink  to={`/asia/${country_name}`} style={{ backgroundImage: `url(${image})` }} >
 
                 <div className='space-y-3 py-5 bg-black text-white opacity-60  shadow-2xl lg:py-20 lg:m-20 card '>
                     <div className="title font-bold text-2xl lg:text-3xl" data-swiper-parallax="-300">
