@@ -4,7 +4,7 @@ const Card = ({ spot }) => {
     const {_id, name, country, location,photo,cost, season,travelTime,totalVisitors, description} = spot;
     return (
         <div>
-            <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+            <div className="max-w-xs rounded-md shadow-md dark:bg-blue-200 dark:text-gray-800">
                 <img src={photo} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
                 <div className="flex flex-col justify-between p-6 space-y-8">
                     <div className="space-y-2">
