@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
 import PropTypes from 'prop-types';
 const Card = ({ spot }) => {
-    const { _id, name, country, location, photo, cost, season, travelTime, totalVisitors, description } = spot;
+    const { _id, name, location, photo, description } = spot;
     return (
         <div>
 

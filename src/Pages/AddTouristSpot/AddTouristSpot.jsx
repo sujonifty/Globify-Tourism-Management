@@ -46,8 +46,8 @@ const AddTouristSpot = () => {
         <div>
 
             <div className="text-center">
-                <h1 className="text-5xl w-full lg:w-3/4 mx-auto font-bold">Add New Tourist Spot</h1>
-                <p className="py-6">It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+                <h1 className="text-5xl w-full lg:w-3/4 mx-auto py-6 font-bold">Add New Tourist Spot</h1>
+               
             </div>
             <div className="hero card shadow-xl min-h-screen border-2 border-gray-400">
 

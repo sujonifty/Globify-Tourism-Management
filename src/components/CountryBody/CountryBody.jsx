@@ -14,7 +14,7 @@ const CountryBody = () => {
     // console.log(countryData)
     return (
         <div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-1 card justify-center items-center my-20 mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 card justify-center items-center my-20 mx-auto">
                 {
                     countryData.map((item,index)=><CountryCard key={index} item={item}></CountryCard>)
                 }

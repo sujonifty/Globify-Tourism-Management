@@ -4,7 +4,6 @@ import HomeCard from "../../components/HomeCard/HomeCard";
 import Promotion from "../../components/Promotion/Promotion";
 import OurPartner from "../../components/OurPartner/OurPartner";
 import CountryBody from "../../components/CountryBody/CountryBody";
-import { Fade } from "react-awesome-reveal";
 import TypeWriting2 from "../../components/HomeCard/TypeWrite/TypeWriting2";
 import TypeWriting3 from "../../components/HomeCard/TypeWrite/TypeWriting3";
 // import LottieAnimation from "../../components/LottieAnimation/LottieAnimation";
@@ -39,7 +38,7 @@ const Home = () => {
                         Promises a journey filled with moments that will linger in your memory long after the trip ends. From breathtaking natural wonders to culturally rich heritage sites, each destination holds the promise of unique and unforgettable encounters. Whether you seek adrenaline-pumping adventures, tranquil escapes, or immersive cultural experiences, the world is brimming with opportunities to create lasting memories. Prepare to be enchanted by stunning landscapes, tantalized by exotic cuisines, and inspired by the diverse cultures that await your exploration. With every step of your journey, embrace the unexpected and allow yourself to be captivated by the beauty and wonder of the world. Your next unforgettable travel experience is just around the corner.
                     </p>
                 </div>
-                <div className=" grid grid-cols-1 md:grid-cols-3  gap-5 mx-auto">
+                <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5 mx-auto">
                     {
                         selectedSpots.map(selectedSpot => <HomeCard key={selectedSpot._id} selectedSpot={selectedSpot}></HomeCard>)
                     }
