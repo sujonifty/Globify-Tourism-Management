@@ -29,8 +29,8 @@ const Home = () => {
                 </p>
             </div>
             <CountryBody></CountryBody>
-            <section>
-                <div className="w-full p-3 md:w-11/12 mx-auto my-16">
+            <section >
+                <div className="w-full p-3  md:w-11/12 mx-auto my-16">
                     <div className="min-h-10 my-5">
                         <TypeWriting3></TypeWriting3>
                     </div>

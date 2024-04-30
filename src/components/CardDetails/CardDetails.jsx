@@ -23,7 +23,7 @@ const CardDetails = () => {
                 <div className="card w-5/6 mx-auto mb-12 -mt-20 dark:bg-gray-500 rounded-lg shadow-md lg:-mt-40">
                     <figure><img src={photo} alt="Movie" /></figure>
                     <div className="card-body">
-                        <h2 className="card-title"><span className="text-lg font-medium "></span>{name}</h2>
+                        <h2 className="card-title text-center"><span className="text-2xl font-medium "></span>{name}</h2>
                         <p className="w-full p-1 md:p-3 text-justify md:w-11/12 mx-auto">{description}</p>
 
                         <div className="flex flex-col w-full lg:flex-row space-y-5 md:space-y-0">
@@ -31,7 +31,7 @@ const CardDetails = () => {
 
                             <div className="grid flex-grow h-32 card bg-base-300 md:rounded-l-none md:rounded-r-none rounded-box place-items-center">
                                 <div className="flex flex-col justify-center items-center">
-                                    <p><span className="text-lg font-medium ">Country Name: </span>{cost}</p>
+                                    <p><span className="text-lg  font-medium ">Country Name: </span>{cost}</p>
                                     <p><span className="text-lg font-medium ">Visitors per years: </span>{totalVisitors}</p>
                                 </div>
                             </div>

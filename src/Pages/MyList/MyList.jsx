@@ -32,7 +32,7 @@ const MyList = () => {
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your coffee has been deleted.",
+                                text: "Your TouristSpot has been deleted.",
                                 icon: "success"
                             });
                             const remains = items.filter(singleItem => singleItem._id !== _id);
