@@ -4,7 +4,7 @@ import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { auth } from "../../Firebase/Firebase.config";
+// import { auth } from "../../Firebase/Firebase.config";
 
 const Login = () => {
     const { createLogin, error, setError, createGoogleUser, createGithubUser} = useContext(authContext);

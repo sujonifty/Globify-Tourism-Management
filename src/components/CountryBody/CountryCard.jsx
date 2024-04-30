@@ -1,5 +1,6 @@
 import { Fade } from "react-awesome-reveal";
 import { NavLink } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 
 const CountryCard = ({ item }) => {
@@ -26,5 +27,7 @@ const CountryCard = ({ item }) => {
         </div>
     );
 };
-
+CountryCard.propTypes = {
+    item: PropTypes.object
+}
 export default CountryCard;

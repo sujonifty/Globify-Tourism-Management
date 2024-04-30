@@ -4,7 +4,7 @@ import { NavLink, useLoaderData } from "react-router-dom";
 
 const SelectedCountry = () => {
     const selectedCountryData = useLoaderData();
-    console.log(selectedCountryData)
+    // console.log(selectedCountryData)
     return (
         <div>
             <div className=" p-10 mx-auto">

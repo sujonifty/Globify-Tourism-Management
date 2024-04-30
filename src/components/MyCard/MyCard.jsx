@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
+import PropTypes from 'prop-types';
 
 
 const MyCard = ({ item, items, setItems }) => {
@@ -74,5 +75,9 @@ const MyCard = ({ item, items, setItems }) => {
         </div>
     );
 };
-
+MyCard.propTypes = {
+    item: PropTypes.object,
+    items: PropTypes.object,
+    setItems: PropTypes.func,
+}
 export default MyCard;

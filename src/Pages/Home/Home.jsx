@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <div>
 
-            <Fade cascade className="text-5xl font-extrabold text-[#D2B48C] pb-6">
+            <Fade cascade className="text-4xl font-extrabold text-[#D2B48C] pb-6">
                 <p >Welcome to Globify</p>
                 <p>Tourism Management.</p>
             </Fade>

@@ -1,6 +1,6 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
-
+import PropTypes from 'prop-types';
 
 const HomeCard = ({ selectedSpot }) => {
     const { _id, name, country, location, photo, cost, season, travelTime, totalVisitors, description } = selectedSpot;
@@ -24,5 +24,7 @@ const HomeCard = ({ selectedSpot }) => {
         </div>
     );
 };
-
+HomeCard.propTypes = {
+    selectedSpot: PropTypes.object
+}
 export default HomeCard;

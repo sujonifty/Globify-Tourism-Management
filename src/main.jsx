@@ -48,7 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cardDetails/:id",
-        element: <CardDetails></CardDetails>,
+        element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
         loader: ({ params }) => fetch(`https://globify-tourism-server.vercel.app/touristSpot/${params.id}`)
       },
       {
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/asia/:country",
-        element:<PrivateRoute><SelectedCountry></SelectedCountry></PrivateRoute>,
+        element:<SelectedCountry></SelectedCountry>,
         loader: ({ params }) => fetch(`https://globify-tourism-server.vercel.app/asia/${params.country}`)
       },
       {
