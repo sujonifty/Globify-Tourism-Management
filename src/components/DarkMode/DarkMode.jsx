@@ -3,7 +3,7 @@ import { IoMdMoon } from "react-icons/io";
 import { LuSunMoon } from "react-icons/lu";
 
 const DarkMode = () => {
-    const [mode, setMode] = useState('dark');
+    const [mode, setMode] = useState('light');
 
     useEffect(() => {
         if (mode == 'dark') {

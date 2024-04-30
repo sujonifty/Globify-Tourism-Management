@@ -1,8 +1,9 @@
 
 const Promotion = () => {
     return (
-        <div className="my-20 border-2 dark:!bg-red-400 pt-10 rounded-md border-gray-400">
+        <div  className="my-20 border-2  pt-10 rounded-md border-gray-400">
             <h1 className="text-3xl md:text-5xl font-bold">PROMOTIONS</h1>
+            <p className="w-full p-1 md:p-3 text-justify md:w-11/12 mx-auto"> Tourism promotion is the art of showcasing the beauty, culture, and allure of destinations to travelers around the globe. Through creative marketing campaigns, engaging content, and strategic partnerships, tourism promotion aims to inspire wanderlust, drive visitor traffic, and unlock unforgettable travel experiences. Join us as we explore the dynamic and ever-evolving landscape of tourism promotion, where every destination has a story to tell and every journey is an opportunity for discovery. Embark on a voyage of exploration and let your wanderlust guide you to new horizons. Your next adventure begins here!</p>
             <p className="md:text-2xl font-extrabold opacity-70">CHOOSE THE BEST</p>
             <div>
                 <div className="overflow-x-auto my-5 ">

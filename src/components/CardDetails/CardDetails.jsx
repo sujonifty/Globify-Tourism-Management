@@ -6,16 +6,6 @@ const CardDetails = () => {
     console.log(photo)
     return (
         <div>
-            {/* <div className="card card-side bg-base-100 shadow-xl">
-                <figure><img src={photo} alt="Movie" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">{name}</h2>
-                    <p>{description}</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Booking Now</button>
-                    </div>
-                </div>
-            </div> */}
 
             <section className="border-2 border-gray-400">
                 <div className="bg-violet-600">
@@ -28,15 +18,21 @@ const CardDetails = () => {
                         </div>
                     </div>
                 </div>
-                {/* <img src="https://source.unsplash.com/random/480x320" alt="" className="w-5/6 mx-auto mb-12 -mt-20 dark:bg-gray-500 rounded-lg shadow-md lg:-mt-40" /> */}
 
                 <div className="card w-5/6 mx-auto mb-12 -mt-20 dark:bg-gray-500 rounded-lg shadow-md lg:-mt-40">
                     <figure><img src={photo} alt="Movie" /></figure>
                     <div className="card-body">
-                        <h2 className="card-title">{name}</h2>
-                        <p>{description}</p>
-                        <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Booking Now</button>
+                        <h2 className="card-title"><span className="text-lg font-medium ">Tourist Spot: </span>{name}</h2>
+                        <p className="w-full p-1 md:p-3 text-justify md:w-11/12 mx-auto">{description}</p>
+                        <div className="grid grid-cols-2 justify-center items-center">
+                            <p><span className="text-lg font-medium ">Country Name: </span>{country}</p>
+                            <p><span className="text-lg font-medium ">Location: </span>{location}</p>
+                            <p><span className="text-lg font-medium ">Average Cost: </span>{cost}</p>
+                            <p><span className="text-lg font-medium ">Seasonality: </span>{season}</p>
+                            <p><span className="text-lg font-medium ">Travel Time: </span>{travelTime}</p>
+                        </div>
+                        <div className="card-actions justify-center ">
+                            <button className="btn ">Booking Now</button>
                         </div>
                     </div>
                 </div>
