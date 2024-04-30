@@ -23,10 +23,10 @@ const Navbar = () => {
     }
 
     const navLinks = <>
-        <NavLink className="btn bg-[#D2B48C] text-white hover:text-black" to="/">Home</NavLink>
-        <NavLink className="btn bg-[#D2B48C] text-white hover:text-black" to="/addSpot">Add Tourists Spot</NavLink>
-        <NavLink className="btn bg-[#D2B48C] text-white hover:text-black" to="/allSpot">All Tourists Spot</NavLink>
-        <NavLink className="btn bg-[#D2B48C] text-white hover:text-black" to="/myList">My Lists</NavLink>
+        <NavLink className="btn hover:bg-[#D2B48C] hover:text-white font-bold" to="/">Home</NavLink>
+        <NavLink className="btn hover:bg-[#D2B48C] hover:text-white font-bold" to="/addSpot">Add Tourists Spot</NavLink>
+        <NavLink className="btn hover:bg-[#D2B48C] hover:text-white font-bold" to="/allSpot">All Tourists Spot</NavLink>
+        <NavLink className="btn hover:bg-[#D2B48C] hover:text-white font-bold" to="/myList">My Lists</NavLink>
         <NavLink className="" >
             <DarkMode></DarkMode>
         </NavLink>
@@ -44,7 +44,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Globify</a>
+                    <a className="btn hover:bg-[#D2B48C] hover:text-white font-extrabold text-xl">Globify</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-4">
@@ -55,7 +55,7 @@ const Navbar = () => {
                     {
                         user ?
                             <>
-                                <button onClick={handleLogOut} className="btn bg-[#D2B48C] text-white hover:text-black w-16 p-0">Log out</button>
+                                <button onClick={handleLogOut} className="btn hover:bg-[#D2B48C] hover:text-white w-16 p-0">Log out</button>
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
                                         <img alt="user photo" src={user.photoURL} title={user.displayName} />
@@ -63,7 +63,7 @@ const Navbar = () => {
                                 </div>
                             </>
                             :
-                            <Link to="/login" className="btn bg-[#D2B48C] text-white hover:text-black">Login</Link>
+                            <Link to="/login" className="btn hover:bg-[#D2B48C] hover:text-white">Login</Link>
                     }
                 </div>
             </div>

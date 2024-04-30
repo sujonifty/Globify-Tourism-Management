@@ -80,8 +80,8 @@ const Login = () => {
     }
     return (
         <div>
-            <div className="flex justify-center items-center">
-                <div className="card shrink-0  w-full max-w-sm shadow-2xl bg-base-100">
+            <div className="flex justify-center items-center ">
+                <div className="border-2 border-gray-400 card shrink-0  w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleLogin} className="p-5 card-body bg-[url('../assets/7.jpg')]">
 
                         <div className="form-control">
@@ -112,17 +112,17 @@ const Login = () => {
                             error && <small className="text-red-700">{error}</small>
                         }
                         <div className="form-control mt-6">
-                            <button className="btn bg-[#D2B48C] text-white hover:text-black">Login</button>
+                            <button className="btn hover:bg-[#D2B48C] hover:text-white">Login</button>
                         </div>
                         <p>Do not have an account? Please <Link to="/register" className="text-blue-700 font-semibold">Register</Link></p>
                     </form>
 
                     <div className="divider">OR</div>
                     <div onClick={handleGoogleLogin} className="form-control mt-6">
-                        <button className="btn bg-[#D2B48C] w-4/5 mx-auto text-white hover:text-black">Login By Google</button>
+                        <button className="btn hover:bg-[#D2B48C] hover:text-white w-4/5 mx-auto ">Login By Google</button>
                     </div>
-                    <div className="form-control mt-6">
-                        <button onClick={handleGithubLogin} className="btn w-4/5 mx-auto bg-[#D2B48C] text-white hover:text-black">Login by GitHub</button>
+                    <div className="form-control my-6">
+                        <button onClick={handleGithubLogin} className="btn  w-4/5 mx-auto hover:bg-[#D2B48C] hover:text-white">Login by GitHub</button>
                     </div>
                 </div>
             </div>

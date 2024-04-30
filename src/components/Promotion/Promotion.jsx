@@ -1,11 +1,11 @@
 
 const Promotion = () => {
     return (
-        <div className="my-20">
+        <div className="my-20 border-2 border-gray-400">
             <h1 className="text-3xl md:text-5xl font-bold">PROMOTIONS</h1>
             <p className="md:text-2xl font-extrabold opacity-70">CHOOSE THE BEST</p>
             <div>
-                <div className="overflow-x-auto my-5">
+                <div className="overflow-x-auto my-5 ">
                     <table className="table">
                         {/* head */}
                         <thead>

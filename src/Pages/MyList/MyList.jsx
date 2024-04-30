@@ -9,7 +9,7 @@ import TypeWriting from "../../components/HomeCard/TypeWrite/TypeWriting";
 const MyList = () => {
     const { user } = useContext(authContext) || {};
     const [items, setItems] = useState([]);
-    
+
 
     const handleDelete = (_id) => {
         Swal.fire({
@@ -50,13 +50,13 @@ const MyList = () => {
                 setItems(data)
             })
     }, [user])
-    
+
     // console.log(items)
     return (
         <div>
             <div className="min-h-10 my-10">
-                    <TypeWriting></TypeWriting>
-                </div>
+                <TypeWriting></TypeWriting>
+            </div>
             <div className="overflow-x-auto my-10">
                 <table className="table">
                     {/* head */}
@@ -73,8 +73,8 @@ const MyList = () => {
                     <tbody>
                         {
                             items.map(item => <tr key={item._id}>
-                                <td>{item.userName }</td>
-                                <td>{item.name }</td>
+                                <td>{item.userName}</td>
+                                <td>{item.name}</td>
                                 <td>{item.cost}</td>
                                 <td>{item.country}</td>
                                 <td>
@@ -92,7 +92,7 @@ const MyList = () => {
                     </tbody>
                 </table>
             </div>
-            
+
 
         </div>
     );

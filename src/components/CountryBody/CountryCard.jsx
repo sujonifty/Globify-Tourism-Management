@@ -10,7 +10,7 @@ const CountryCard = ({ item }) => {
             <NavLink to={`/asia/${country_name}`} style={{ backgroundImage: `url(${image})` }} >
 
                 
-                <div className="card shadow-2xl">
+                <div className="card shadow-2xl border-2 border-gray-400">
                     <div className="relative">
                         <img className="w-full bg-cover object-cover md:h-56  rounded-xl " src={image} alt={country_name} />
                         <div className="absolute h-full w-full top-0 bottom-0 rounded-xl bg-black opacity-70">

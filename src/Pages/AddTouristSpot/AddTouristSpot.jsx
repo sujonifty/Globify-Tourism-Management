@@ -49,7 +49,7 @@ const AddTouristSpot = () => {
                 <h1 className="text-5xl w-full lg:w-3/4 mx-auto font-bold">Add New Tourist Spot</h1>
                 <p className="py-6">It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
             </div>
-            <div className="hero card shadow-xl min-h-screen bg-[#F4F3F0]">
+            <div className="hero card shadow-xl min-h-screen border-2 border-gray-400">
 
                 <form onSubmit={handleAddSpot} className="card-body">
                     <div className="flex flex-col md:flex-row gap-5">
@@ -145,7 +145,7 @@ const AddTouristSpot = () => {
                         </div>
 
                     <div className="form-control mt-6">
-                        <input type="submit" className="btn bg-[#D2B48C]" value="Add Tourist Spot" />
+                        <input type="submit" className="btn hover:bg-[#D2B48C] hover:text-white" value="Add Tourist Spot" />
                     </div>
                 </form>
             </div>

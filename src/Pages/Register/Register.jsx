@@ -60,9 +60,9 @@ const Register = () => {
     }
     return (
         <div>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center ">
                 <div className="card shrink-0  w-full max-w-sm shadow-2xl bg-base-100">
-                    <form onSubmit={handleRegister} className="p-5 card-body bg-[url('../assets/7.jpg')]">
+                    <form onSubmit={handleRegister} className="border-2 border-gray-400 p-5 card-body bg-[url('../assets/7.jpg')]">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
@@ -104,7 +104,7 @@ const Register = () => {
                             error && <small className="text-red-700">{error}</small>
                         }
                         <div className="form-control mt-6">
-                            <button className="btn bg-[#D2B48C] text-white hover:text-black">Register</button>
+                            <button className="btn hover:bg-[#D2B48C] hover:text-white">Register</button>
                         </div>
                         <p>Already have an account? Please <Link to="/login" className="text-blue-700 font-semibold">Login</Link></p>
                     </form>

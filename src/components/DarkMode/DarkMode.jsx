@@ -3,7 +3,7 @@ import { IoMdMoon } from "react-icons/io";
 import { LuSunMoon } from "react-icons/lu";
 
 const DarkMode = () => {
-    const [mode, setMode] = useState('light');
+    const [mode, setMode] = useState('dark');
 
     useEffect(() => {
         if (mode == 'dark') {
@@ -20,7 +20,7 @@ const DarkMode = () => {
 
     return (
         <>
-            <button className="btn text-white hover:text-black bg-[#D2B48C]" onClick={handleMode}>
+            <button className="btn hover:text-white hover:bg-[#D2B48C]" onClick={handleMode}>
                 {mode === "light" ? <IoMdMoon />: <LuSunMoon />}
             </button>
         </>

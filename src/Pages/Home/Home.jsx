@@ -15,11 +15,9 @@ const Home = () => {
     return (
         <div>
 
-            <Fade cascade className="text-5xl">
-                <p >I am an animated text</p>
-                <p>I enter first...</p>
-                <p>...then comes my turn...</p>
-                <p>...and finally you see me!</p>
+            <Fade cascade className="text-5xl font-extrabold text-[#D2B48C] pb-6">
+                <p >Welcome to Globify</p>
+                <p>Tourism Management.</p>
             </Fade>
             <Slider></Slider>
             <div>
