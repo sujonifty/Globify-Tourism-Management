@@ -18,6 +18,7 @@ const SelectedCountry = () => {
                                 <div className="flex flex-col justify-between p-6 space-y-8">
                                     <div className="space-y-2">
                                         <h2 className="text-3xl font-semibold tracking-wide">{selectedData.name}</h2>
+                                        <p className="text-2xl font-semibold leading-tight tracking-wide"> {selectedData.country}</p>
                                         <p>Average cost: {selectedData.cost}</p>
                                         <p className="text-justify dark:text-gray-800">{selectedData.description.slice(0, 100)}</p>
                                     </div>

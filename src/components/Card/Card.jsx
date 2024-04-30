@@ -13,6 +13,7 @@ const Card = ({ spot }) => {
                 <p className="flex-1 w-full p-1 md:p-3 text-justify md:w-11/12 mx-auto dark:text-gray-600">{description.slice(0, 150)}</p>
                 <p className="text-2xl font-semibold leading-tight tracking-wide">Average Cost: {cost}</p>
 
+
                 <div className="flex justify-between items-center space-x-1">
                     <h2 className="text-2xl"><FaLocationDot /></h2>
                     <p className="text-2xl font-semibold leading-tight tracking-wide">Location: {location}</p>
