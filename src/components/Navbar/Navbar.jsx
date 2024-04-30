@@ -27,9 +27,7 @@ const Navbar = () => {
         <NavLink className="btn hover:bg-[#D2B48C] hover:text-white font-bold" to="/addSpot">Add Tourists Spot</NavLink>
         <NavLink className="btn hover:bg-[#D2B48C] hover:text-white font-bold" to="/allSpot">All Tourists Spot</NavLink>
         <NavLink className="btn hover:bg-[#D2B48C] hover:text-white font-bold" to="/myList">My Lists</NavLink>
-        <NavLink className="" >
-            <DarkMode></DarkMode>
-        </NavLink>
+        <DarkMode></DarkMode>
     </>
     return (
         <div>

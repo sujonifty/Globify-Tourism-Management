@@ -11,7 +11,7 @@ const TypeWriting = () => {
     return (
         <div className='App'>
             <p className='text-6xl font-extrabold '>
-                Wellcome <span className='text-[#D2B48C]'>{text}</span>
+                Welcome <span className='text-[#D2B48C]'>{text}</span>
             </p>
       
     </div>
